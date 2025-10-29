@@ -1,5 +1,6 @@
 import csv
 
+
 def get_unique_publishers():
     with open('books-en.csv') as file:
         reader = csv.reader(file, delimiter=';')
@@ -14,5 +15,6 @@ def get_unique_publishers():
         for publisher in sorted(unique_publishers):
             print(publisher)
             print()
+
 
 get_unique_publishers()

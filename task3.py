@@ -5,31 +5,17 @@ import csv
 biblio = []
 
 
-with open('books-en.csv') as text:
-    reader = csv.reader(text, delimiter=';')
-    for row in reader:
-        books = list(reader)   
-
- 
-with open('books-en.csv') as file:
-    reader = csv.reader(file, delimiter=';')  
-
-
-    count = 0 
-    i = 0  
-    for row in reader:
-        if len(row) >= 4:   
-            i += 1
+with open('books-en.csv') as f:
+    reader = csv.reader(f, delimiter=';')  
+    count = 0  
+    for i, row in enumerate(reader, 1):
+        if len(row) >= 4:
             title = row[1]
             author = row[2]
             year = row[3]
-
-             
             citation = f"{i}. {author}. \"{title}\" - {year}."
             biblio.append(citation)
             count += 1
-
-
             if count >= 21:
                 break
 

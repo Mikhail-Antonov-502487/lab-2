@@ -2,11 +2,10 @@ import csv
 
 
 def popular_books():
+
     with open('books-en.csv', 'r') as books:
         reader = csv.reader(books, delimiter=';')
-
         next(reader)
-        
         list_books = []
         
         for row in reader:

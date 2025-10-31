@@ -1,12 +1,13 @@
 # поиск книги по автору
 import csv
 
+
 def search_books_by_author(author_name):
     books = []
     
+    
     with open('books-en.csv') as file:
         reader = csv.DictReader(file, delimiter=';')   
-
         for row in reader:
             try:
                 year = int(row['Year-Of-Publication'])   
